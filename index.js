@@ -25,10 +25,15 @@ app.set("view engine", "ejs");
  * So now it will always be located correctly
  */
 const path = require('path');
-app.set("views", path.join(__dirname, "/views")); //it avoids error
+//this sets the setting of express - setting: "views" - 
+//basically sets the directory of views
+app.set("views", path.join(__dirname, "views"));  //it avoids error
+
+//it helps to access the static files - CSS,JS 
+app.use(express.static(path.join(__dirname, "public")));
 
 
-
+//get request
 app.get("/", (req, res) => {
     res.render('homeSignup'); //it by default searches in views directory so we don't write directory
 });
