@@ -42,5 +42,15 @@ app.get("/hello", (req, res) => {
     res.send('homeSignup'); //it by default searches in views directory so we don't write directory
 })
 
+//Interpolation Syntax
+/**
+ * It refers to embedding expressions into marked up text
+ * `This is ${name}` -> This is embedding value of name here
+ * Likewise we will embed whole bunch of javascripts and all
+ * 
+ * This makes our html dynamic -changes our html in runtime - 
+ * -as the information come - it will change html dynamically
+ */
+
 
 
