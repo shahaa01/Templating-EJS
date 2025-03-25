@@ -75,6 +75,14 @@ app.get('/test', (req, res) => {
  *  <%=   %>   -> used to output data into html (escaped)
  */
 
+app.get('/rolldice', (req, res) => {
+    let diceVal = Math.trunc(Math.random() * 6) + 1; //this data comes from database which we will study later
+    // res.render('rolldice', {currDice: diceVal}); 
+    res.render('rolldice', {diceVal}); //this is also correct and shorthand
+    //we can pass a second argu which must be an object and we can access
+    //its value (diceVal) with the key(currDice) in EJS
+})
+
 
 
 
