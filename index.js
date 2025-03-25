@@ -52,5 +52,29 @@ app.get("/hello", (req, res) => {
  * -as the information come - it will change html dynamically
  */
 
+/**
+ * Tags of EJS
+ * <%= -> Outputs the value into the template (HTML escaped - If the webpage just 
+ * shows user inputs without checking, the browser will run this script, which could be 
+ * dangerous!
+ */
+
+const people = [
+    {name: "Aaditya", age: 19, country: "Nepal"},
+    {name: "Swe", age: 18, country: "USA"},
+    {name: "Sus", age: 17, country: "Denmark"},
+
+]
+
+app.get('/test', (req, res) => {
+    res.render('test', {users: people}); //no path needed - auto detect views dir
+    //no extension needed
+});
+
+/**
+ *  <%=   %>   -> used to output data into html (escaped)
+ */
+
+
 
 
