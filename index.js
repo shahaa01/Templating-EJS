@@ -83,6 +83,13 @@ app.get('/rolldice', (req, res) => {
     //its value (diceVal) with the key(currDice) in EJS
 })
 
+//lets create a basic instagram EJS 
+app.get('/ig/:username', (req, res) => {
+    let {username} = req.params;
+    res.render('insta', {username});
+})
+
+
 
 
 

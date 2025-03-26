@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1>Dice is: <%= diceVal %> </h1>
+    <% if(diceVal == 6) { %>
+        <p>Nice ! Roll Dice again!</p>
+        <button>Roll Again</button>
+    <%}%>
 </body>
 </html>
