@@ -6,8 +6,19 @@
     <title>Instagram</title>
 </head>
 <body>
-    <h3 style="display: inline; margin: 0 15px;"> @<%= username %> </h1>
+    <h3> This page belongs to @<%= data.name %> </h3>
         <button style="margin: 0 5px;">Follow</button>
-        <button>Message</button>
+        <button>Message</button> <br> <br>
+        <p style="display: inline;">Followers : <%= data.followers %> <br><br> </p>
+        <p style="display: inline;">Followings : <%= data.following %> <br><br> </p>
+
+        <% posts = data.posts %>
+        <% for(post of posts) { %>
+            <% imageSrc = post.image %>         
+            <img src= " <%= imageSrc %>" alt="Post Image" style="height: 100px;"><br>
+            <p>Likes: <%= post.likes %> </p>
+            <p>Comments: <%= post.comments %> </p>
+        <% } %>
+
 </body>
 </html>

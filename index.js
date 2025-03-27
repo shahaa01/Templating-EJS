@@ -85,8 +85,16 @@ app.get('/rolldice', (req, res) => {
 
 //lets create a basic instagram EJS 
 app.get('/ig/:username', (req, res) => {
+    //got a data from database which is generally in the form of json - data.json - which we need to require
+    const instaData = require('./data.json');
     let {username} = req.params;
-    res.render('insta', {username});
+    let data = instaData[username];
+
+    if(!data) {
+        res.status(400).send("User not found");
+    }
+    
+    res.render('insta', {data}); //always remember the second parameter that is the data has to be an object
 })
 
 
