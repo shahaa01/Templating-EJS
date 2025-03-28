@@ -34,13 +34,21 @@
         </div>
     </div>
     <hr>
-    
-        <% for(post of posts) { %>
-            <% imageSrc = post.image %>         
-            <img src= " <%= imageSrc %>" class="post-img" alt="Post Image"><br>
-            <p>Likes: <%= post.likes %> </p>
-            <p>Comments: <%= post.comments %> </p>
-        <% } %>
+    <h2>POSTS</h2>
+        <div class="container-post">
+            <% for(post of posts) { %>
+            <div class="post">
+                <div class="post-img">
+                    <% imageSrc = post.image %>         
+                    <img src= " <%= imageSrc %>" class="post-img" alt="Post Image">
+                </div>
+                <div class="post-info">
+                    <p>Likes: <%= post.likes %> </p>
+                    <p>Comments: <%= post.comments %> </p>
+                </div>
+            </div>
+            <% } %>
+        </div>
 
 </body>
 </html>

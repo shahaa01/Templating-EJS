@@ -1,9 +1,18 @@
+body {
+    background: linear-gradient(rgb(118, 80, 8), rgb(93, 10, 10));
+
+}
+
 .container {
     display: flex;
     flex-direction: row; /* Keep image and text side by side */
     align-items: flex-start;
     gap: 20px; /* Space between profile pic and text */
     margin: 20px 10px;
+    padding: 10px;
+    background-color: white;
+    background-color: aliceblue;
+    border-radius: 15px;
 }
 
 .text-section {
@@ -48,5 +57,27 @@ img {
     height: 200px;
     width: 200px;
 }
+
+.container-post {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5x 5px rgba(224, 43, 43, 0.6);
+    background-color: aliceblue;
+    border-radius: 15px;
+
+}
+
+
 
 
