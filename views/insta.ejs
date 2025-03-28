@@ -4,18 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h3> This page belongs to @<%= data.name %> </h3>
-        <button style="margin: 0 5px;">Follow</button>
-        <button>Message</button> <br> <br>
-        <p style="display: inline;">Followers : <%= data.followers %> <br><br> </p>
-        <p style="display: inline;">Followings : <%= data.following %> <br><br> </p>
-
-        <% posts = data.posts %>
+    <% posts = data.posts %>
+    <div class="container">
+        <!-- Profile Picture -->
+        <div class="profile-pic">
+            <img src="<%= posts[0].image %>" class="profile-pic" alt="Profile Pic">
+        </div>
+    
+        <!-- Right Section (Username, Buttons, Follow-info) -->
+        <div class="text-section">
+            
+            <!-- Username & Buttons -->
+            <div class="first-row">
+                <h3>@<%= data.name %></h3>
+                <button class="follow-btn">Follow</button>
+                <button class="follow-btn">Message</button>
+            </div>
+    
+            <!-- Follow Info -->
+            <div class="follow-info">
+                <p class="post-number"><%= posts.length %> posts</p>
+                <p class="follow">Followers: <%= data.followers %></p>
+                <p class="follow">Following: <%= data.following %></p>
+            </div>
+    
+        </div>
+    </div>
+    <hr>
+    
         <% for(post of posts) { %>
             <% imageSrc = post.image %>         
-            <img src= " <%= imageSrc %>" alt="Post Image" style="height: 100px;"><br>
+            <img src= " <%= imageSrc %>" class="post-img" alt="Post Image"><br>
             <p>Likes: <%= post.likes %> </p>
             <p>Comments: <%= post.comments %> </p>
         <% } %>

@@ -29,10 +29,6 @@ const path = require('path');
 //basically sets the directory of views
 app.set("views", path.join(__dirname, "views"));  //it avoids error
 
-//it helps to access the static files - CSS,JS 
-app.use(express.static(path.join(__dirname, "public")));
-
-
 //get request
 app.get("/", (req, res) => {
     res.render('homeSignup'); //it by default searches in views directory so we don't write directory
@@ -97,7 +93,14 @@ app.get('/ig/:username', (req, res) => {
     res.render('insta', {data}); //always remember the second parameter that is the data has to be an object
 })
 
+//Lets learn how to send static files like css and js - 
+/**
+ * You cannot directly write the path in ejs file and expect
+ * things to work as in normal html
+ */
 
+//it helps to access the static files - CSS,JS 
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
