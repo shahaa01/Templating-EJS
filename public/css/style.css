@@ -75,8 +75,14 @@ img {
     box-shadow: 5px 5x 5px rgba(224, 43, 43, 0.6);
     background-color: aliceblue;
     border-radius: 15px;
-
 }
+
+.post:hover {
+    cursor: pointer;
+    background-color: rgb(240, 248, 255, 0.7);
+    transform: translateY(-3px);
+}
+
 
 
 

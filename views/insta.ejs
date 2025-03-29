@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <%- include('include/instaHeader') %>
     <% posts = data.posts %>
     <div class="container">
         <!-- Profile Picture -->
         <div class="profile-pic">
-            <img src="<%= posts[0].image %>" class="profile-pic" alt="Profile Pic">
+            <img src="<%= posts[Math.floor(Math.random() * 3)].image %>" class="profile-pic" alt="Profile Pic">
         </div>
     
         <!-- Right Section (Username, Buttons, Follow-info) -->

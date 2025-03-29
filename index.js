@@ -87,7 +87,7 @@ app.get('/ig/:username', (req, res) => {
     let data = instaData[username];
 
     if(!data) {
-        res.status(400).send("User not found");
+        res.render('error');
     }
     
     res.render('insta', {data}); //always remember the second parameter that is the data has to be an object
@@ -101,6 +101,12 @@ app.get('/ig/:username', (req, res) => {
 
 //it helps to access the static files - CSS,JS 
 app.use(express.static(path.join(__dirname, 'public')));
+
+/**
+ * Now lets talk about 'includes' keyword
+ * we have a header and footer in a website
+ * include helps us to use the header and footer template in each pages
+ */
 
 
 
